@@ -79,9 +79,10 @@
 		rumble-boost-weak = <0x0000>;
 		rumble-boost-strong = <0x0000>;
 
-		joypad-name = "retrogame_joypad";
-		joypad-product = <0x1101>;
-		joypad-revision = <0x0100>;
+		joypad-name = "Microsoft X-Box 360 pad";
+		joypad-vendor = <0x045e>;
+		joypad-product = <0x028e>;
+		joypad-revision = <0x0110>;
 
 		status = "okay";
 
@@ -132,7 +133,7 @@
 		abs_ry-n-tuning = <300>;
 
 		/* poll device interval (ms), adc read interval */
-		poll-interval = <10>;
+		poll-interval = <4>;
 
 		/* required for RG552(invert) */
 		invert-absx;
@@ -143,89 +144,89 @@
 			autorepeat;
 		*/
 		sw1 {
-		        gpios = <&gpio3 RK_PA0 GPIO_ACTIVE_LOW>;
-		        label = "GPIO DPAD-UP";
-		        linux,code = <BTN_DPAD_UP>;
-		};
-		sw2 {
-		        gpios = <&gpio3 RK_PA1 GPIO_ACTIVE_LOW>;
-		        label = "GPIO DPAD-DOWN";
-		        linux,code = <BTN_DPAD_DOWN>;
-		};
-		sw3 {
-		        gpios = <&gpio3 RK_PA3 GPIO_ACTIVE_LOW>;
-		        label = "GPIO DPAD-LEFT";
-		        linux,code = <BTN_DPAD_LEFT>;
-		};
-		sw4 {
-		        gpios = <&gpio3 RK_PA2 GPIO_ACTIVE_LOW>;
-		        label = "GPIO DPAD-RIGHT";
-		        linux,code = <BTN_DPAD_RIGHT>;
-		};
-		sw5 {
 		        gpios = <&gpio3 RK_PA6 GPIO_ACTIVE_LOW>;
-		        label = "GPIO KEY BTN-A";
-		        linux,code = <BTN_EAST>;
-		};
-		sw6 {
-		        gpios = <&gpio3 RK_PA7 GPIO_ACTIVE_LOW>;
-		        label = "GPIO BTN-B";
+		        label = "GPIO BTN_B";
 		        linux,code = <BTN_SOUTH>;
 		};
-		sw7 {
-		        gpios = <&gpio3 RK_PA4 GPIO_ACTIVE_LOW>;
-		        label = "GPIO BTN-X";
-		        linux,code = <BTN_NORTH>;
+		sw2 {
+		        gpios = <&gpio3 RK_PA7 GPIO_ACTIVE_LOW>;
+		        label = "GPIO BTN_A";
+		        linux,code = <BTN_EAST>;
 		};
-		sw8 {
+		sw3 {
 		        gpios = <&gpio3 RK_PA5 GPIO_ACTIVE_LOW>;
-		        label = "GPIO BTN-Y";
+		        label = "GPIO BTN_Y";
 		        linux,code = <BTN_WEST>;
 		};
-		sw9 {
-		        gpios = <&gpio3 RK_PB1 GPIO_ACTIVE_LOW>;
-		        label = "GPIO BTN_SELECT";
-		        linux,code = <BTN_SELECT>;
+		sw4 {
+		        gpios = <&gpio3 RK_PA4 GPIO_ACTIVE_LOW>;
+		        label = "GPIO BTN_X";
+		        linux,code = <BTN_NORTH>;
 		};
-		sw10 {
-		        gpios = <&gpio3 RK_PB0 GPIO_ACTIVE_LOW>;
-		        label = "GPIO BTN_START";
-		        linux,code = <BTN_START>;
-		};
-		sw11 {
-		        gpios = <&gpio3 RK_PC0 GPIO_ACTIVE_LOW>;
-		        label = "GPIO BTN_F";
-		        linux,code = <BTN_MODE>;
-		};
-		sw12 {
+		sw5 {
 		        gpios = <&gpio3 RK_PD0 GPIO_ACTIVE_LOW>;
 		        label = "GPIO BTN_TL";
 		        linux,code = <BTN_TL>;
 		};
-		sw13 {
+		sw6 {
 		        gpios = <&gpio3 RK_PD2 GPIO_ACTIVE_LOW>;
 		        label = "GPIO BTN_TR";
 		        linux,code = <BTN_TR>;
 		};
-		sw14 {
-		        gpios = <&gpio3 RK_PD1 GPIO_ACTIVE_LOW>;
-		        label = "GPIO BTN_TL2";
-		        linux,code = <BTN_TL2>;
+		sw7 {
+		        gpios = <&gpio3 RK_PB1 GPIO_ACTIVE_LOW>;
+		        label = "GPIO BTN_SELECT";
+		        linux,code = <BTN_SELECT>;
 		};
-		sw15 {
-		        gpios = <&gpio3 RK_PD3 GPIO_ACTIVE_LOW>;
-		        label = "GPIO BTN_TR2";
-		        linux,code = <BTN_TR2>;
+		sw8 {
+		        gpios = <&gpio3 RK_PB0 GPIO_ACTIVE_LOW>;
+		        label = "GPIO BTN_START";
+		        linux,code = <BTN_START>;
 		};
-		sw16 {
+		sw9 {
+		        gpios = <&gpio3 RK_PC0 GPIO_ACTIVE_LOW>;
+		        label = "GPIO BTN_F";
+		        linux,code = <BTN_MODE>;
+		};
+		sw10 {
 		        gpios = <&gpio3 RK_PB3 GPIO_ACTIVE_LOW>;
 		        label = "GPIO BTN_THUMBL";
 		        linux,code = <BTN_THUMBL>;
 		};
-		sw17 {
+		sw11 {
 		        gpios = <&gpio3 RK_PB4 GPIO_ACTIVE_LOW>;
 		        label = "GPIO BTN_THUMBR";
 		        linux,code = <BTN_THUMBR>;
+		};
+		sw12 {
+		        gpios = <&gpio3 RK_PD1 GPIO_ACTIVE_LOW>;
+		        label = "GPIO BTN_TL2";
+		        linux,code = <BTN_TL2>;
+		};
+		sw13 {
+		        gpios = <&gpio3 RK_PD3 GPIO_ACTIVE_LOW>;
+		        label = "GPIO BTN_TR2";
+		        linux,code = <BTN_TR2>;
+		};
+		sw14 {
+		        gpios = <&gpio3 RK_PA0 GPIO_ACTIVE_LOW>;
+		        label = "GPIO DPAD_UP";
+		        linux,code = <BTN_DPAD_UP>;
+		};
+		sw15 {
+		        gpios = <&gpio3 RK_PA1 GPIO_ACTIVE_LOW>;
+		        label = "GPIO DPAD_DOWN";
+		        linux,code = <BTN_DPAD_DOWN>;
+		};
+		sw16 {
+		        gpios = <&gpio3 RK_PA3 GPIO_ACTIVE_LOW>;
+		        label = "GPIO DPAD_LEFT";
+		        linux,code = <BTN_DPAD_LEFT>;
+		};
+		sw17 {
+		        gpios = <&gpio3 RK_PA2 GPIO_ACTIVE_LOW>;
+		        label = "GPIO DPAD_RIGHT";
+		        linux,code = <BTN_DPAD_RIGHT>;
 		};
 	};
 
