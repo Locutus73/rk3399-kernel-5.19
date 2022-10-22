@@ -340,26 +340,9 @@
 	};
 	bat: battery {
 		compatible = "simple-battery";
-		charge-full-design-microamp-hours = <6400000>;
+		charge-full-design-microamp-hours = <3200000>;
 		voltage-max-design-microvolt = <4350000>;
-		voltage-min-design-microvolt = <3400000>;
-                constant-charge-current-max-microamp = <1500000>;
-                constant-charge-voltage-max-microvolt = <4350000>;
-                factory-internal-resistance-micro-ohms = <150000>;
-                resistance-temp-table = <20 150>;
-		
-                ocv-capacity-celsius = <20>;
-                ocv-capacity-table-0 =	<4308000 100>,<4217000 95>,
-					<4161000 90>,<4110000 85>,
-					<4066000 80>,<4007000 75>,
-					<3974000 70>,<3937000 65>,
-					<3896000 60>,<3853000 55>,
-					<3827000 50>,<3807000 45>,
-					<3793000 40>,<3780000 35>,
-					<3768000 30>,<3756000 25>,
-					<3740000 20>,<3716000 15>,
-					<3689000 10>,<3675000 5>,
-					<3400000 0>;
+		voltage-min-design-microvolt = <3000000>;
 	};
 
 	mains_charger: dc-charger {
@@ -1020,20 +1003,11 @@
 	cw2015@62 {
 		compatible = "cellwise,cw2015";
 		reg = <0x62>;
-		cellwise,battery-profile = /bits/ 8 <
-				   0x15 0x7E 0x66 0x5B 0x58 0x55 0x51 0x4D
-				   0x4A 0x47 0x44 0x47 0x4D 0x46 0x32 0x27
-				   0x1F 0x1A 0x15 0x16 0x21 0x30 0x3F 0x4A
-				   0x46 0x5C 0x0C 0x29 0x19 0x31 0x59 0x74
-				   0x7B 0x7D 0x81 0x82 0x3F 0x1A 0x58 0x22
-				   0x06 0x42 0x2B 0x63 0x89 0x93 0x94 0x3C
-				   0x57 0x7D 0x93 0xAE 0x80 0xC2 0xD2 0xCB
-				   0x2F 0x00 0x64 0xA5 0xB5 0x1F 0xB0 0x11
-		>;
 		cellwise,monitor-interval-ms = <5000>;
-		power-supplies = <&mains_charger>;	
 		monitored-battery = <&bat>;
+		power-supplies = <&mains_charger>;	
 	};
+
 };
 
 &i2c1 {
