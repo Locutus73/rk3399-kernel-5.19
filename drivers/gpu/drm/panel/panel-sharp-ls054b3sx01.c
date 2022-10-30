@@ -234,7 +234,7 @@ static int sharp_ls054_unprepare(struct drm_panel *panel)
 
 // FIXME: should we strive for perfect 60hz?
 static const struct drm_display_mode sharp_ls054_mode = {
-	.clock          = ((1152 + 64 + 4 + 32) * (1920 + 3 + 3 + 4) * 60) / 1000,
+	.clock          = 1475000,
 	.hdisplay	= 1152,
 	.hsync_start	= 1152 + 64,
 	.hsync_end	= 1152 + 64 + 4,
